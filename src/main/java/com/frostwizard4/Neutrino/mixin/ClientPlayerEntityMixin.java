@@ -24,11 +24,13 @@ public abstract class ClientPlayerEntityMixin extends AbstractClientPlayerEntity
 
     @Inject(at = @At("HEAD"), method = "tick()V")
     private void neutrino$moodSoundPlay(CallbackInfo ci) {
+        /*
         if(this.client.player != null) {
             if ((Math.round(this.client.player.getMoodPercentage() * 100.0F)) == 100) {
                 addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 140, 2));
             }
         }
+        */
     }
 }
 
