@@ -20,11 +20,13 @@ public abstract class LightningEntityMixin extends Entity {
 
     @Inject(method = "spawnFire", at = @At("HEAD"))
     private void neutrino$createExplosion(int spreadAttempts, CallbackInfo ci) {
+        /*
         for(int i = 0; i < 50; i++) {
             neutrino$rndStrike = (int) (Math.random() * (100 - 1 + 1) + 1);
         }
         if(neutrino$rndStrike > 10 && neutrino$rndStrike < 15) {
             world.createExplosion(this, this.getX(), this.getY(), this.getZ(), 4, Explosion.DestructionType.BREAK);
         }
+        */
     }
 }
