@@ -26,11 +26,10 @@ public class EndGatewayBlockEntityMixin extends EndPortalBlockEntity {
     private static void serverTick(World world, BlockPos pos, BlockState state, EndGatewayBlockEntity blockEntity, CallbackInfo ci) {
         if (world instanceof ServerWorld) {
             if (world.getTime() % 100L == 0L) {
-                for (MobEntity e : world.getEntitiesByClass(MobEntity.class, Box.of(Vec3d.ofCenter(pos), 1000, 1000, 1000), EndGatewayBlockEntity::canTeleport)) {
-                    e.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 1200, 1));
-                    e.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 1200, 1));
-                    e.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 1200, 2));
-                    e.addStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 1200, 1));
+                for (MobEntity e : world.getEntitiesByClass(MobEntity.class, Box.of(Vec3d.ofCenter(pos), 32, 32, 32), EndGatewayBlockEntity::canTeleport)) {
+                    e.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 80, 1));
+                    e.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 80, 1));
+                    e.addStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 80, 1));
                 }
             }
         }
